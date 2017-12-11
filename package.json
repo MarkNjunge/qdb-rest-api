@@ -1,0 +1,34 @@
+{
+	"name": "qdb-rest-api",
+	"version": "1.0.0",
+	"description": "An unofficial REST API for Quote Database.",
+	"main": "src/app.js",
+	"author": "Mark Njung'e",
+	"license": "MIT",
+	"scripts": {
+		"start": "node src/app.js",
+		"start-live": "nodemon src/app.js"
+	},
+	"keywords": [
+		"bash",
+		"bash.org",
+		"quotes",
+		"quote database",
+		"irc",
+		"qdb",
+		"api",
+		"rest",
+		"express"
+	],
+	"contributors": [
+		{
+			"name": "Mark Njung'e",
+			"email": "mark.kamau@outlook.com",
+			"url": "marknkamau.com"
+		}
+	],
+	"dependencies": {
+		"express": "^4.16.2",
+		"qdb-api": "^1.0.2"
+	}
+}
