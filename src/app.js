@@ -1,7 +1,7 @@
 const express = require('express')
 const qdb = require('qdb-api')
 
-const PORT = 3000
+const PORT = process.argv[2] || 3000
 
 const app = express()
 
