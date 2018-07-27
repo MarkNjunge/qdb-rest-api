@@ -29,6 +29,6 @@
 	],
 	"dependencies": {
 		"express": "^4.16.2",
-		"qdb-api": "^1.0.2"
+		"qdb-api": "^2.0.0"
 	}
 }

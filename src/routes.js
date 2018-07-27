@@ -4,7 +4,7 @@ const express = require('express')
 const router = express.Router()
 
 router.get('/', (req, res) => {
-	res.send('Unofficial Quote Database REST API')
+	res.send('Unofficial qdb.us REST API')
 })
 
 router.get('/random', (req, res) => {
@@ -31,22 +31,16 @@ router.get('/latest', (req, res) => {
 
 router.get('/search', (req, res) => {
 	const query = req.query.query
-	let sort = req.query.sort
-	let count = req.query.count
+	let order = req.query.order || 'score'
+	let sort = req.query.sort || 'desc'
+	let count = req.query.count || 10
+	let approved = req.query.approved || 1
 
 	if (!query) {
 		res.status(400).send({ error: 'Missing query parameter' })
 	} else {
-		if (!sort) {
-			sort = 0
-		}
-
-		if (!count) {
-			count = 10
-		}
-
 		qdb
-			.search(query, sort, count)
+			.search(query, order, sort, count, approved)
 			.then(quotes => {
 				res.send(quotes)
 			})
